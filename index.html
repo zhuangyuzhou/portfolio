@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>AMS Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png?">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png?">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png?">
+<link rel="manifest" href="assets/favicons/site.webmanifest">
+<link rel="mask-icon" href="assets/favicons/safari-pinned-tab.svg?" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="#intro" class="w3-bar-item w3-button w3-padding-large w3-hide-small">INTRO</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">MILESTONES <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#m1" class="w3-bar-item w3-button">Milestone 1</a>
+        <a href="#m2" class="w3-bar-item w3-button">Milestone 2</a>
+        <a href="#m3" class="w3-bar-item w3-button">Milestone 3</a>
+        <a href="#m4" class="w3-bar-item w3-button">Milestone 4</a>
+      </div>
+    </div>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
+  <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1000px;margin-top:46px">
+
+  <!-- Automatic Slideshow Images -->
+<!--   <div class="mySlides w3-display-container w3-center">
+    <img src="/w3images/la.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>Los Angeles</h3>
+      <p><b>We had the best time playing at Venice Beach!</b></p>   
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="/w3images/ny.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>New York</h3>
+      <p><b>The atmosphere in New York is lorem ipsum.</b></p>    
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="/w3images/chicago.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>Chicago</h3>
+      <p><b>Thank you, Chicago - A night we won't forget.</b></p>    
+    </div>
+  </div> -->
+
+  <!-- The Band Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="intro">
+    <div class="w3-row-padding">
+      <div class="w3-col l3">
+        <img src="./assets/images/logo.png" style="width:120%">
+      </div>
+      <div class="w3-col l9">
+        <h2 class="w3-wide">AMS: APU Monitoring System</h2>
+        <p class="w3-opacity"><i>Yuzhou Zhuang</i></p>
+      </div>
+    </div>
+    <p class="w3-justify">There are a number of procedures that happen when a plane docks at a gate. Often times the APU (Auxiliary Power Unit) is left on despite the presence of a GPU (Ground Power Unit) and PCA (Preconditioned Air) being connected. The unnecessary use of APU’s pose both a cost to the environment as well as airlines.  The SeaTac Airport (SEA) will be introducing regulations prohibiting the use of APUs but no airport in the world has successfully implemented a monitoring, reporting, and reinforcement system to address the issues. The purpose of AMS (APU Monitoring System) is to help airports close the loop in APU management and work for a greener tomorrow.</p>
+<!--     <div class="w3-row w3-padding-32">
+      <div class="w3-third">
+        <p>Name</p>
+        <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+      </div>
+      <div class="w3-third">
+        <p>Name</p>
+        <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+      </div>
+      <div class="w3-third">
+        <p>Name</p>
+        <img src="/w3images/bandmember.jpg" class="w3-round" alt="Random Name" style="width:60%">
+      </div>
+    </div> -->
+  </div>
+
+
+  <!-- Milestone 1 -->
+	<div class="w3-container w3-card w3-round w3-margin" id="m1"><br>
+      <!-- <span class="w3-right w3-opacity">1 min</span> -->
+      <h3>MILESTONE 1 - Jun 2020</h3>
+      <hr class="w3-clear">
+      <p>
+        In Milestone 1, we conducted secondary/primary research in the problem domain and derived design requirements and implications in each area of user experience, technology and business. The following is what we did:
+        <ol>
+          <li> Research questions</li>
+          <li> Background and secondary research</li>
+          <li> Project constraints</li>
+          <li> Competitive Analysis</li>
+          <li> Primary user research plan</li>
+          <li> Emerging design requirements</li>
+        </ol>
+      </p>
+        <div class="w3-row-padding" class="w3-margin">
+          <div class="w3-col l4 w3-center">
+            <img src="./assets/images/airport.png" style="width:100%">
+            <p class="w3-opacity"> APU is usually located in the tail of an aircraft</p>
+          </div>
+          <div class="w3-col l8 w3-center">
+            <img src="./assets/images/honeywell.png" style="width:100%">
+            <p class="w3-opacity"> An engineer is examining the APU</p>
+        </div>
+      </div>
+      <hr class="w3-clear">
+      <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+      <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+    </div>
+
+
+    <!-- Milestone 2 -->
+    <div class="w3-container w3-card w3-round w3-margin" id="m2"><br>
+      <!-- <span class="w3-right w3-opacity">1 min</span> -->
+      <h3>MILESTONE 2 - Jul 2020</h3>
+      <hr class="w3-clear">
+      <p>
+        In Milestone 2, we followed the primary user research plan from Milestone 1 and carried out primary research with various methods, including interviews, field study and cognitive task analysis. With findings from primary research, we further refined our design requirements.
+      </p>
+      <p>
+        We have decided to use microphones as the primary sensor and Raspberry Pi as the computing platform in our solution. We tested out various microphones with different directionality and frequency responses, including omnidirectional mic, cardioid mic and mic arrays. We were lucky enough to capture the APU frequency signature in our first field trip. (See image below)
+      </p>
+        <div class="w3-row-padding" class="w3-margin">
+          <div class="w3-col l5 w3-center">
+            <img src="./assets/images/affinity_analysis.png" style="width:100%">
+            <p class="w3-opacity"> Affinity analysis from our primary research</p>
+          </div>
+          <div class="w3-col l7 w3-center">
+            <img src="./assets/images/spectrogram.jpg" style="width:100%">
+            <p class="w3-opacity"> Spectrogram of a clip we recorded at the airport, where we can clearly see the dominant frequencies of the running APU</p>
+        </div>
+        <div class="w3-center">
+          <img src="./assets/images/field_trip.png" style="width:100%">
+          <p class="w3-opacity"> Field trip at the SeaTac Airport, the potential soundscape we can monitor with our system</p>
+        </div>
+      </div>
+      <hr class="w3-clear">
+      <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+      <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+    </div>
+
+
+    <!-- Milestone 3 -->
+    <div class="w3-container w3-card w3-round w3-margin" id="m3"><br>
+      <!-- <span class="w3-right w3-opacity">1 min</span> -->
+      <h3>MILESTONE 3 - Aug 2020</h3>
+      <hr class="w3-clear">
+      <p>
+        In Milestone 3, we planned out our software and hardware archetectures and were excited to build our first data collection prototype. Since we planned to deploy our standalone prototype at the airport for at least one week without any human operation, it needs to be carefully designed to be both safe and robust. The hardware consists of a waterproof pelican case, powerbanks, a Raspberry Pi, and an omnidirectional microphone.
+      </p>
+      <p>
+        With enough audio samples collected, we would be able to label the data semi-automatically with gate schedule information and auxiliary camera snapshots, which we would later use for both training and evaluating our APU detection model. We also made a video to present what we have achieved so far.
+      </p>
+        <div class="w3-row-padding" class="w3-margin">
+          <div class="w3-half w3-center">
+            <img src="./assets/images/case.png" style="width:100%">
+            <p class="w3-opacity"> The data collection prototype (outside view)</p>
+          </div>
+          <div class="w3-half w3-center">
+            <img src="./assets/images/prototype.png" style="width:100%">
+            <p class="w3-opacity"> The data collection prototype (internal components)</p>
+          </div>
+        </div>
+        <div class="w3-center">
+          <iframe src="https://drive.google.com/file/d/1ec0OhPvXVtACQ5JI7HnXIMFm9xFXzMXO/preview" width="800" height="450"></iframe>
+        </div>
+      <hr class="w3-clear">
+      <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+      <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+    </div>
+
+
+    <!-- Milestone 4 -->
+    <div class="w3-container w3-card w3-round w3-margin" id="m4"><br>
+      <!-- <span class="w3-right w3-opacity">1 min</span> -->
+      <h3>MILESTONE 4 - Oct 2020</h3>
+      <hr class="w3-clear">
+      <p>
+        From Milestone 3 to Milestone 4, we have made some major changes to our prototype. First, we changed from using Raspberry Pi 4B to Raspberry Pi Zero to reduce power consumption. Second, We increased the battery capacity by chaining multiple power banks together. Last, we added a LTE modem to allow real-time access to status and data remotely during the process of data collection. We deployed two similar kits which can add redundancy as well as collect more data.
+      </p>
+      <p>
+        We also designed and a mock-up dashboard which mimics how APU data streams are integrated into the airport system and presented to the end user. We evaluated our dashboard with both heuristic evaluation and expert interviews.
+      </p>
+        <div class="w3-row-padding" class="w3-margin">
+          <div class="w3-half w3-center">
+            <img src="./assets/images/kit1.jpg" style="width:100%">
+            <p class="w3-opacity"> First kit assembly</p>
+          </div>
+          <div class="w3-half w3-center">
+            <img src="./assets/images/kit2.jpg" style="width:100%">
+            <p class="w3-opacity"> Second kit assembly</p>
+          </div>
+        </div>
+        <div class="w3-row-padding" class="w3-margin">
+          <div class="w3-half w3-center">
+            <img src="./assets/images/deploy1.jpg" style="width:100%">
+            <p class="w3-opacity"> First kit deployment</p>
+          </div>
+          <div class="w3-half w3-center">
+            <img src="./assets/images/deploy2.jpg" style="width:100%">
+            <p class="w3-opacity"> Second kit deployment</p>
+          </div>
+        </div>
+        <div class="w3-row-padding" class="w3-margin">
+          <div class="w3-half w3-center">
+            <img src="./assets/images/dashboard1.png" style="width:100%">
+            <p class="w3-opacity"> Real-time dashboard</p>
+          </div>
+          <div class="w3-half w3-center">
+            <img src="./assets/images/dashboard2.png" style="width:100%">
+            <p class="w3-opacity"> Statistics dashboard</p>
+          </div>
+        </div>
+      <hr class="w3-clear">
+      <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+      <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+    </div>
+
+  <!-- The Tour Section -->
+<!--   <div class="w3-black" id="tour">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+      <h2 class="w3-wide w3-center">TOUR DATES</h2>
+      <p class="w3-opacity w3-center"><i>Remember to book your tickets!</i></p><br>
+
+      <ul class="w3-ul w3-border w3-white w3-text-grey">
+        <li class="w3-padding">September <span class="w3-tag w3-red w3-margin-left">Sold out</span></li>
+        <li class="w3-padding">October <span class="w3-tag w3-red w3-margin-left">Sold out</span></li>
+        <li class="w3-padding">November <span class="w3-badge w3-right w3-margin-right">3</span></li>
+      </ul>
+
+      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+        <div class="w3-third w3-margin-bottom">
+          <img src="/w3images/newyork.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>New York</b></p>
+            <p class="w3-opacity">Fri 27 Nov 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <img src="/w3images/paris.jpg" alt="Paris" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Paris</b></p>
+            <p class="w3-opacity">Sat 28 Nov 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <img src="/w3images/sanfran.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>San Francisco</b></p>
+            <p class="w3-opacity">Sun 29 Nov 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Ticket Modal -->
+<!--   <div id="ticketModal" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('ticketModal').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
+      </header>
+      <div class="w3-container">
+        <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="How many?">
+        <p><label><i class="fa fa-user"></i> Send To</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="Enter email">
+        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
+        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- The Contact Section -->
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">CONTACT</h2>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col m6 w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker" style="width:30px"></i> <a href="https://gixnetwork.org/"> Global Innovation Exchange (GIX)</a><br>
+        <i class="fa fa-envelope" style="width:30px"> </i> <a href="mailto:yzz@uw.edu"> yzz@uw.edu</a><br>
+        <i class="fa fa-linkedin" style="width:30px"></i> <a href="https://www.linkedin.com/in/yuzhou-zhuang/"> LinkedIn link</a><br>
+      </div>
+      <div class="w3-col m6">
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-col m9">
+              <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+            </div>
+            <div class="w3-col m3">
+              <button class="w3-button w3-black w3-border w3-right" type="submit">SEND</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+<!-- End Page Content -->
+</div>
+
+<!-- Image of location/map -->
+<!-- <img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%"> -->
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-16 w3-center w3-opacity w3-black w3-xlarge">
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
