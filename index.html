@@ -16,6 +16,11 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
+<!-- Code Highlighter -->
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+<script src="http://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 <style>
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
@@ -242,6 +247,173 @@ body {font-family: "Lato", sans-serif}
       <hr class="w3-clear">
       <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
       <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+    </div>
+
+    <div class="w3-container w3-card w3-round w3-margin" id="m5"><br>
+      <!-- <span class="w3-right w3-opacity">1 min</span> -->
+      <h3>MILESTONE 5 - Nov 2020</h3>
+      <hr class="w3-clear">
+      <p>
+        In this month, we began putting everything together, and established a robust data flow from the device to the database to the frontend.
+      </p>
+      <ul>
+        <li> Data collection and labeling: After the initial data collection, we identified some issues and modified our data collection kit correspondingly, including removing unnecessary hardware, fixing the RTC issue, and unifying datetime format. We were able to collect more data in a week due to the improved robustness. We also started labeling our data. For that purpose, I pre-process and align the audio files, the schedule information, and the gate photos, and compile the outputs in pdf format which significantly improves the accuracy and efficiency of the mannual labeling process. </li>
+        <li> Algorithm: We have built our first baseline detection model for APU monitoring. The model runs peak detection on the audio spectrogram, but relies on human-set thresholds (height, prominence, etc). The model has proven to work for many cases, but still requires fully-labeled dataset for parameter selection and model evaluation. </li>
+      </ul>
+      <div class="w3-row-padding" class="w3-margin">
+        <div class="w3-col l5 w3-center">
+          <img src="./assets/images/labeling.jpg" style="width:100%">
+          <p class="w3-opacity"> Generated pdf for data labeling</p>
+        </div>
+        <div class="w3-col l7 w3-center">
+          <img src="./assets/images/peak_detection.png" style="width:100%">
+          <p class="w3-opacity"> The baseline peak detection model</p>
+        </div>
+      </div>
+      <ul>
+         <li> Backend: We set up the Azure CosmosDB Database, and developed the JSON schema for transmitting and storing inference data. </li>
+         <li> Front-end: We used React to turn our mock-up dashboard into a clickable web app as our front-end interface, and used Microsoft Power BI for data visualization. </li>
+      </ul>
+      <div class="w3-row-padding" class="w3-margin">
+        <div class="w3-col l5 w3-center">
+          <img src="./assets/images/json_schema.png" style="width:100%">
+          <p class="w3-opacity"> JSON Schema</p>
+        </div>
+        <div class="w3-col l7 w3-center">
+          <img src="./assets/images/front-end.png" style="width:100%">
+          <p class="w3-opacity"> Front-end Web App</p>
+        </div>
+      </div>
+      <hr class="w3-clear">
+      <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+      <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+    </div>
+
+    <div class="w3-container w3-card w3-round w3-margin" id="m5"><br>
+      <!-- <span class="w3-right w3-opacity">1 min</span> -->
+      <h3>MILESTONE 6 - Dec 2020</h3>
+      <hr class="w3-clear">
+      <p>
+        For the final Milestone, we are ready to deploy our APU detection device at the airport, with real-time updates both in the cloud and on the front-end interface. In order to finally put everything together, we made the following efforts.
+      </p>
+      <ul>
+        <li> Device: We transformed our previous data collection kit into the APU monitoring edge device. The device is more lightweighted since we are able to connect to power cables instead of batteries. We also upgraded the computing hardware from Raspberry Pi Zero to Raspberry Pi 4 and updated the software to include the inference model. </li>
+      </ul>
+        <div class="w3-row-padding" class="w3-margin">
+        <div class="w3-col l7 w3-center">
+          <img src="./assets/images/device-1.png" style="width:100%">
+          <p class="w3-opacity"> APU Monitoring Device (inside)</p>
+        </div>
+        <div class="w3-col l5 w3-center">
+          <img src="./assets/images/device-2.png" style="width:100%">
+          <p class="w3-opacity"> APU Monitoring Device (outside)</p>
+        </div>
+      </div>
+      <ul>
+        <li> Algorithm: The detection model builds on the baseline peak detection model, but includes more sophisticated features (height, prominence, sharpness). I used grid search on the training set to select the optimal model parameters. The model achieves 0.76 F1 score on the test set, with 88% accuracy for APU-on cases and 94% accuracy for APU-off cases. </li>
+         <li> Backend: We updated the ERD diagram and JSON schema for our database, and received our first real-time APU detection from the device! </li>
+         <li> Front-end: We decided to use Microsoft Power BI as our front-end interface, due to its advanced data visualization features. </li>
+      </ul>
+      <div class="w3-row-padding" class="w3-margin">
+        <div class="w3-col l5 w3-center">
+          <img src="./assets/images/erd.png" style="width:100%">
+          <p class="w3-opacity"> ERD Diagram</p>
+        </div>
+        <div class="w3-col l7">
+          <pre class="line-numbers"><code class="json">{
+    "id": "193700f9-4472-4f0d-ad1e-42c63e0a322d",
+    "version": "1.0",
+    "timestamp": "2020-11-24T22:03:54",
+    "data": {
+        "recording_duration": 60,
+        "gate": "D4",
+        "apu": {
+            "detected": true,
+            "frequency": 9375,
+            "run_time": 60
+        }
+    }
+}</code></pre>
+        <p class="w3-opacity w3-center"> JSON object of first real-time detected APU</p>
+        </div>
+      </div>
+      <hr class="w3-clear">
+      <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+      <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+    </div>
+
+    <div class="w3-container w3-card w3-round w3-margin" id="code"><br>
+      <h3>CODE</h3>
+      <hr class="w3-clear">
+      <p>
+        This part will demonstrate some of the key code snippets for APU monitoring. The complete source code is currently hosted on my GitHub, which may be released in public in the future.
+      </p>
+      <h4>Recording bash script</h4>
+      <pre><code class="bash">#!/bin/bash
+
+echo heartbeat | sudo tee /sys/class/leds/led0/trigger >/dev/null
+arecord --device=plughw:S3,0 --format S16_LE --rate 48000 -c1 --max-file-time 60 --use-strftime "/media/ams_drive/data/%Y-%m-%d-%H-%M-%S.wav"</code></pre>
+      
+      <h4>Main Class for APU monitoring</h4>
+      <pre><code class="python">class WavFileHandler(PatternMatchingEventHandler):
+    def __init__(self):
+        PatternMatchingEventHandler.__init__(self, patterns=['*.wav'], ignore_directories=True, case_sensitive=False)
+        self.model = BaselineModel(**modelConfig)
+        self.db = cosmosDB()
+
+    def on_created(self, event):
+        print('Received:', event.src_path)
+        data, sr = librosa.load(event.src_path, sr=None, mono=True)
+        if sr != modelConfig['sr']:
+            raise ValueError('Incorrect sampling rate')
+        X = np.abs(librosa.stft(data, n_fft=modelConfig['n_fft'], hop_length=modelConfig['hop_length']))
+        y_pred = self.model.predict(X)
+        print('APU_detected:', y_pred.is_APU_on)
+        print('APU_freq', y_pred.APU_freq)
+        
+        # upload data to Azure
+        filename = path.basename(event.src_path)
+        name = path.splitext(filename)[0]
+        timestamp = datetime.strptime(name, '%Y-%m-%d-%H-%M-%S').isoformat()
+        duration = round(librosa.get_duration(data, sr=sr))
+        audio_object = create_audio_object(timestamp, VERSION, duration, GATE, bool(y_pred.is_APU_on), y_pred.APU_freq, duration)
+        self.db.upload_object(audio_object)</code></pre>
+
+        <h4> Model Class </h4>
+        <pre><code class="python">class BaselineModel:
+    def __init__(self, n_fft, sr, lb, ub, height, prominence, sharpness, verbose=False, **kwargs):
+        freq_bins = np.fft.fftfreq(n_fft, d=1/sr)
+        self.freq_segment = np.nonzero((freq_bins > lb) & (freq_bins < ub))
+        self.freq_bins = freq_bins[self.freq_segment]
+        self.lb = lb
+        self.ub = ub
+        self.height = height
+        self.prominence = prominence
+        self.sharpness = sharpness
+        self.verbose = verbose
+    
+    def __repr__(self):
+        return f'BaselineModel(lb={self.lb}, ub={self.ub}, height={self.height}, \
+            prominence={self.prominence}, sharpness={self.sharpness}, verbose={self.verbose})'
+    
+    def predict(self, X):
+        x = 10 * np.log10(X[self.freq_segment].mean(axis=1))
+        candidates, _ = signal.find_peaks(x, height=self.height, prominence=self.prominence)
+        peaks = [peak for peak in candidates
+                 if 2 <= peak < len(x) - 2 and x[peak] - max(x[peak - 2], x[peak + 2]) < self.sharpness]
+        peak_freq = self.freq_bins[max(peaks, key=x.__getitem__)] if len(peaks) > 0 else -1
+        if self.verbose:
+            print("Detected freqs:", self.freq_bins[peaks])
+            plt.figure()
+            plt.hlines(self.height, self.lb, self.ub, colors='r', ls='--')
+            plt.plot(self.freq_bins, x)
+            plt.plot(self.freq_bins[peaks], x[peaks], 'x')
+            plt.xlim(self.lb, self.ub)
+            plt.ylim(-10, 15)
+            plt.title('APU freq: {}'.format(peak_freq))
+            plt.grid()
+            plt.show()
+        return APUInfo(None, peak_freq != -1, None, peak_freq)</code></pre>
     </div>
 
   <!-- The Tour Section -->
