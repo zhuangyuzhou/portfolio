@@ -40,8 +40,12 @@ body {font-family: "Lato", sans-serif}
         <a href="#m2" class="w3-bar-item w3-button">Milestone 2</a>
         <a href="#m3" class="w3-bar-item w3-button">Milestone 3</a>
         <a href="#m4" class="w3-bar-item w3-button">Milestone 4</a>
+        <a href="#m5" class="w3-bar-item w3-button">Milestone 5</a>
+        <a href="#m6" class="w3-bar-item w3-button">Milestone 6</a>
       </div>
     </div>
+    <a href="#code" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CODE</a>
+    <a href="#reflection" class="w3-bar-item w3-button w3-padding-large w3-hide-small">REFLECTION</a>
     <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
     <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
   </div>
@@ -58,29 +62,6 @@ body {font-family: "Lato", sans-serif}
 <!-- Page content -->
 <div class="w3-content" style="max-width:1000px;margin-top:46px">
 
-  <!-- Automatic Slideshow Images -->
-<!--   <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/la.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Los Angeles</h3>
-      <p><b>We had the best time playing at Venice Beach!</b></p>   
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/ny.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>New York</h3>
-      <p><b>The atmosphere in New York is lorem ipsum.</b></p>    
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/chicago.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Chicago</h3>
-      <p><b>Thank you, Chicago - A night we won't forget.</b></p>    
-    </div>
-  </div> -->
-
   <!-- The Band Section -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="intro">
     <div class="w3-row-padding">
@@ -93,20 +74,6 @@ body {font-family: "Lato", sans-serif}
       </div>
     </div>
     <p class="w3-justify">There are a number of procedures that happen when a plane docks at a gate. Often times the APU (Auxiliary Power Unit) is left on despite the presence of a GPU (Ground Power Unit) and PCA (Preconditioned Air) being connected. The unnecessary use of APU’s pose both a cost to the environment as well as airlines.  The SeaTac Airport (SEA) will be introducing regulations prohibiting the use of APUs but no airport in the world has successfully implemented a monitoring, reporting, and reinforcement system to address the issues. The purpose of AMS (APU Monitoring System) is to help airports close the loop in APU management and work for a greener tomorrow.</p>
-<!--     <div class="w3-row w3-padding-32">
-      <div class="w3-third">
-        <p>Name</p>
-        <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
-      </div>
-      <div class="w3-third">
-        <p>Name</p>
-        <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
-      </div>
-      <div class="w3-third">
-        <p>Name</p>
-        <img src="/w3images/bandmember.jpg" class="w3-round" alt="Random Name" style="width:60%">
-      </div>
-    </div> -->
   </div>
 
 
@@ -289,7 +256,7 @@ body {font-family: "Lato", sans-serif}
       <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
     </div>
 
-    <div class="w3-container w3-card w3-round w3-margin" id="m5"><br>
+    <div class="w3-container w3-card w3-round w3-margin" id="m6"><br>
       <!-- <span class="w3-right w3-opacity">1 min</span> -->
       <h3>MILESTONE 6 - Dec 2020</h3>
       <hr class="w3-clear">
@@ -414,6 +381,24 @@ arecord --device=plughw:S3,0 --format S16_LE --rate 48000 -c1 --max-file-time 60
             plt.grid()
             plt.show()
         return APUInfo(None, peak_freq != -1, None, peak_freq)</code></pre>
+    </div>
+
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="reflection">
+      <div class="w3-row">
+        <h2 class="w3-wide">Reflection</h2>
+      </div>
+      <p class="w3-justify">
+        The full engagement in each phase of this project has helped me become an "APU expert" from someone who doesn't know anything about APU or GPU. More importantly, I have learned that working in teams to tackle a real-world problem is different from completing an individual course project in many significant ways.
+      </p>
+      <p class="w3-justify">
+        First, team colaboration and work distribution is key. We encountered some obstacles in the early milestones because of mis-communication of tasks and responsibilities in the team, which slowed us down for data collection. Luckily we were able to find our role in the team gradually, and cooperate with other team members to integrate different parts of the project. Team project also requires us to be more self-motivated, which we make sure by encouraging everyone to talk about his work during our meetings as well as meetings with sponsors.
+      </p>
+      <p class="w3-justify">
+        Second, real-world problems tend to be more complicated and require more careful consideration. For example, in the process of building our data collection kit, we have to conduct multiple tests other than the task of monitoring APU, such as power consumption, battery chaining, heat dissipation, water resistance, etc. In my previous course or research projects, I would never think so carefully because the top priority for me is to get the results. However, these considerations and tests have all proven necessary during our actual deployment.
+      </p>
+      <p class="w3-justify">
+        Last, leveraging the advantage of team by asking for suggestions. Even if team members are assigned specific roles and tasks, it can still be extremely valuable by discussing and asking for suggestions in the early phase of development. By looking at the project from different angles, we are able to contribute to the project as a whole while we are pushing forward in our own directions. I am constantly surprised by how other team members' occasional feedback can have significant benefit on my part. For example, when I was developing the data labeling script, I was inspired by another team member to generate visual representations of audio in pdf format, which not only saved the whole team hours of time, but also greatly improved the quality of labeling. These are valuable experiences I wouldn't get from doing individual projects.
+      </p>
     </div>
 
   <!-- The Tour Section -->
